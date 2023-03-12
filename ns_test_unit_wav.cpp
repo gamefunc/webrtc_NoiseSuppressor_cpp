@@ -217,5 +217,6 @@ int main(){
     std::cout << "denoise final" << std::endl;
     std::cout << "report: github: gamefunc; qq: 32686647" << std::endl;
     std::cout << "https://www.gamefunc.top:9029" << std::endl;
+    std::cout << "noise_tmoive.wav -> denoised_tmoive.wav" << std::endl;
     return 0;
 }// main()
