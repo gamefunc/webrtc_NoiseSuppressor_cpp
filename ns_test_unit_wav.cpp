@@ -50,18 +50,18 @@ auto DENOISE_LEVEL = webrtc::NsConfig::SuppressionLevel::k12dB;
 
 struct WAV_HEADER{
     char riff_flag[4];
-    int wav_size; 
+    uint32_t wav_size; 
     char wave_flag[4];
     char fmt_flag[4]; 
-    int fmt_chunk_size; 
-    short audio_format; 
-    short num_channels;
-    int sample_rate;
-    int byte_rate; 
-    short sample_alignment; 
-    short bit_depth;
+    uint32_t fmt_chunk_size; 
+    uint16_t audio_format; 
+    uint16_t num_channels;
+    uint32_t sample_rate;
+    uint32_t byte_rate; 
+    uint16_t sample_alignment; 
+    uint16_t bit_depth;
     char data_flag[4]; 
-    int data_bytes; 
+    uint32_t data_bytes; 
     // pcm data start:
     // 2声道的话数据是 LRLRLRLR记录;
     // 单声道就是 LLLLLLL 这样;
@@ -131,7 +131,7 @@ int main(){
 
     // 取 pcm array 部分:
     int16_t *pcm_data = (int16_t*)&wav_data[44];
-    int num_of_pcm_samples = wav_header->data_bytes 
+    uint32_t num_of_pcm_samples = wav_header->data_bytes 
         / (wav_header->bit_depth / 8);
 
     webrtc::AudioBuffer audio_buff(
