@@ -1,7 +1,7 @@
 webrtc_NoiseSuppressor_cpp
 =======
 Get all relative code files of webrtc NoiseSuppressor module;  
-and a simple wmv denoise example written using cpp code;
+and a simple wav denoise example written using cpp code;
 
 Author: gamefunc:
 ----------------
